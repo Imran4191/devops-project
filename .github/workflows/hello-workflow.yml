@@ -1,0 +1,17 @@
+name: Read and Output hello.txt
+
+on:
+  push:
+    branches:
+      - main  # Trigger workflow when code is pushed to main
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest  # Runs on an Ubuntu GitHub runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Checks out the repo
+
+      - name: Read and output hello.txt content
+        run: cat hello.txt  # Reads and prints the file content
